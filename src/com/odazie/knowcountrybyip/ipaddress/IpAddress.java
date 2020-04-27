@@ -25,9 +25,9 @@ public class IpAddress {
             System.err.println("Error: " + e.getMessage());
         }
 
-        System.out.println("Hostname: " + getInetAddress().getHostName());
-        System.out.println("IP Address: " + getInetAddress().getHostAddress()); // Local IP Address
-        System.out.println("TestIP Address: " + InetAddress.getLoopbackAddress()); // LocalHost address
+        System.out.println("Hostname: " + getHostname());
+        System.out.println("Local IP Address: " + getInetAddress().getHostAddress()); // Local IP Address
+//        System.out.println("TestIP Address: " + InetAddress.getLoopbackAddress()); // LocalHost address
     }
 
     // This method gets public Ip address of Device.
@@ -57,7 +57,7 @@ public class IpAddress {
     }
 
     public String getHostname() {
-        return hostname;
+        return getInetAddress().getHostName();
     }
 
     public void setHostname(String hostname) {
